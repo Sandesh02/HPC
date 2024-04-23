@@ -4,13 +4,13 @@
 
 using namespace std;
 
-void bubble(int array[], int n){
-    for (int i = 0; i < n - 1; i++){
-        for (int j = 0; j < n - i - 1; j++){
-            if (array[j] > array[j + 1]) swap(array[j], array[j + 1]);
-        } 
-    }
-}
+// void bubble(int array[], int n){
+//     for (int i = 0; i < n - 1; i++){
+//         for (int j = 0; j < n - i - 1; j++){
+//             if (array[j] > array[j + 1]) swap(array[j], array[j + 1]);
+//         } 
+//     }
+// }
 
 void pBubble(int array[], int n){
     //Sort odd indexed numbers
@@ -55,22 +55,22 @@ int main(){
     // Sequential time
     
     
-    double start_time = omp_get_wtime();
-    bubble(arr, n);
-    double end_time = omp_get_wtime();   
-    cout << "Sequential Bubble Sort took : " << end_time - start_time << " seconds" << endl;
+    // double start_time = omp_get_wtime();
+    // bubble(arr, n);
+    // double end_time = omp_get_wtime();   
+    // cout << "Sequential Bubble Sort took : " << end_time - start_time << " seconds" << endl;
     // printArray(arr, n);
     
     // Reset the array
-    for(int i = 0, j = n; i < n; i++, j--) arr[i] = j;
+    //for(int i = 0, j = n; i < n; i++, j--) arr[i] = j;
     
     // Parallel time
-    start_time = omp_get_wtime();
+    double start_time = omp_get_wtime();
     pBubble(arr, n);
-    end_time = omp_get_wtime();   
+    double end_time = omp_get_wtime();   
     cout << "Parallel Bubble Sort took : " << end_time - start_time << " seconds" << endl;
     
            
  
-    // printArray(arr, n);
+    printArray(arr, n);
 }   
