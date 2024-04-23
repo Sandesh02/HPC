@@ -53,11 +53,11 @@ int main(){
     for(int i = 0, j = n; i < n; i++, j--) arr[i] = j;
     
     // Sequential time
+    double start_time,end_time;
     
-    
-    // double start_time = omp_get_wtime();
+    // start_time = omp_get_wtime();
     // bubble(arr, n);
-    // double end_time = omp_get_wtime();   
+    // end_time = omp_get_wtime();   
     // cout << "Sequential Bubble Sort took : " << end_time - start_time << " seconds" << endl;
     // printArray(arr, n);
     
@@ -65,9 +65,9 @@ int main(){
     //for(int i = 0, j = n; i < n; i++, j--) arr[i] = j;
     
     // Parallel time
-    double start_time = omp_get_wtime();
+    start_time = omp_get_wtime();
     pBubble(arr, n);
-    double end_time = omp_get_wtime();   
+    end_time = omp_get_wtime();   
     cout << "Parallel Bubble Sort took : " << end_time - start_time << " seconds" << endl;
     
            
