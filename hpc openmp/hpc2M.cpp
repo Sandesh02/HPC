@@ -66,14 +66,14 @@ void parallelMergeSort(int arr[], int low, int high) {
     }
 }
 
-void mergeSort(int arr[], int low, int high) {
-    if (low < high) {
-        int mid = (low + high) / 2;
-        mergeSort(arr, low, mid);
-        mergeSort(arr, mid + 1, high);
-        merge(arr, low, mid, high);
-    }
-}
+// void mergeSort(int arr[], int low, int high) {
+//     if (low < high) {
+//         int mid = (low + high) / 2;
+//         mergeSort(arr, low, mid);
+//         mergeSort(arr, mid + 1, high);
+//         merge(arr, low, mid, high);
+//     }
+// }
 
 int main() {
     int n = 10;
@@ -84,13 +84,13 @@ int main() {
     for(int i = 0, j = n; i < n; i++, j--) arr[i] = j;
     
     // Measure Sequential Time
-    start_time = omp_get_wtime(); 
-    mergeSort(arr, 0, n - 1);
-    end_time = omp_get_wtime(); 
-    cout << "Time taken by sequential algorithm: " << end_time - start_time << " seconds\n";
+    // start_time = omp_get_wtime(); 
+    // mergeSort(arr, 0, n - 1);
+    // end_time = omp_get_wtime(); 
+    // cout << "Time taken by sequential algorithm: " << end_time - start_time << " seconds\n";
 
     // Reset the array
-    for(int i = 0, j = n; i < n; i++, j--) arr[i] = j;
+    //for(int i = 0, j = n; i < n; i++, j--) arr[i] = j;
     
     //Measure Parallel time
     start_time = omp_get_wtime(); 
