@@ -68,13 +68,26 @@ public:
 
 int main() {
     // Create a graph
-    Graph g(7);
-    g.addEdge(0, 1);
-    g.addEdge(0, 2);
-    g.addEdge(1, 3);
-    g.addEdge(1, 4);
-    g.addEdge(2, 5);
-    g.addEdge(2, 6);
+    int n;
+    cout<<"enter number of node: "<<endl;
+    cin>>n;
+    Graph g(n);
+    int edges;
+    cout<<"enter number of edges "<<endl;
+    cin>>edges;
+    for(int i=0;i<edges;i++){
+        int s,e;
+        cout<<"enter start and end vertex: "<<endl;
+        cin>>s>>e;
+        g.addEdge(s,e);
+    }
+    // Graph g(7);
+    // g.addEdge(0, 1);
+    // g.addEdge(0, 2);
+    // g.addEdge(1, 3);
+    // g.addEdge(1, 4);
+    // g.addEdge(2, 5);
+    // g.addEdge(2, 6);
     
     /*
         0 ---------1
